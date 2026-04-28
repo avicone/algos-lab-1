@@ -21,11 +21,18 @@ def measure_time(func, data, target):
 
 if __name__ == '__main__':
     sizes = [100, 1000, 5000, 10000]
-    targets = [0, 5000, 10000, -1] 
+    target = 5000
     
-    for target in targets:
-        print(f"\nПоиск значения: {target}")
-        for n in sizes:
-            arr = generate_array(n)
-            t = measure_time(nalich, arr, target)
-            print(f"  Размер {n}: {t:.8f} сек")
+    print(f"{'Размер':<10} {'Время (сек)':<15} {'Найдено?':<10}")
+    print("-" * 40)
+    
+    for n in sizes:
+        arr = generate_array(n)
+        
+        start = time.perf_counter()
+        found = nalich(arr, target)
+        end = time.perf_counter()
+        
+        t = end - start
+        status = "Да" if found else "Нет"
+        print(f"{n:<10} {t:<15.8f} {status:<10}")
