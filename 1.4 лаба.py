@@ -20,7 +20,7 @@ def measure_time(func, data):
     return end - start
 
 if __name__ == '__main__':
-    sizes = [5, 10, 15, 20]  
+    sizes = [100, 1000, 5000, 10000]  
     
     for n in sizes:
         print(f"\n--- Таблица умножения {n} x {n} ---")
