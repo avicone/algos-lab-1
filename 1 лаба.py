@@ -34,5 +34,5 @@ if __name__ == '__main__':
         end = time.perf_counter()
         
         t = end - start
-        status = "Да" if found else "Нет"
+        status = "True" if found else "False"
         print(f"{n:<10} {t:<15.8f} {status:<10}")
