@@ -37,5 +37,5 @@ if __name__ == '__main__':
     for n in sizes:
         arr = generate_array(n)
         t, found = measure_time(binp, arr, target)
-        status = "Да" if found else "Нет"
+        status = "True" if found else "False"
         print(f"Размер: {n}, Время: {t:.6f} сек, Найдено: {status}")
